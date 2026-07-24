@@ -5,10 +5,10 @@ REasoning-Guided REport Generation), provided per the challenge's code-submissio
 
 ## Team
 
-- **Team Name:** TODO
-- **Team Members:** TODO
-- **Grand Challenge Profile URL(s):** TODO
-- **Grand Challenge Username(s):** TODO
+- **Team Name:** GenMI
+- **Team Members:** Gagneet Singh, Adinath Dukre, Imran Razzaq
+- **Grand Challenge Profile URL(s):** https://grand-challenge.org/users/adinath@dukre/
+- **Grand Challenge Username(s):** adinath@dukre
 
 ## Method (brief)
 
@@ -56,7 +56,19 @@ plus offline-inference caches) is hosted externally as it exceeds GitHub's file-
 
 ## Environment / dependencies
 
-- Training: see `training/src/README.md` and the imports at the top of each script (PyTorch,
-  TRIDENT, H-Optimus-0 via `timm`/`transformers`, standard WSI-processing stack).
-- Inference (container): see `submission/requirements.txt` and `submission/Dockerfile` — pinned to
-  `torch==2.5.1+cu121` to match the validated environment (H-Optimus-0 + `timm==0.9.16`).
+- **Training:** Python 3.11.15. [`training/requirements.txt`](training/requirements.txt) is a full
+  `pip freeze` of the exact validated conda environment (153 packages, includes `torch==2.5.1+cu121`,
+  `timm==0.9.16`, `transformers==4.57.6`, `trident==0.3.0`, `einops`, `h5py`, `openslide-python`,
+  `pyvips`, `geopandas`, `shapely`, `scikit-image`, etc.). Setup:
+  ```bash
+  conda create -n reg2026 python=3.11
+  conda activate reg2026
+  pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cu121
+  pip install -r training/requirements.txt
+  ```
+  (`torch`/`torchvision` need the CUDA-specific index URL above; installing them from
+  `requirements.txt` directly via plain `pip install -r` will fail to resolve the `+cu121` build.)
+- **Inference (container):** see `submission/requirements.txt` and `submission/Dockerfile` — pinned
+  to `torch==2.5.1+cu121` to match the same validated environment (H-Optimus-0 + `timm==0.9.16`);
+  `torch`/`torchvision` come from the Docker base image, not `requirements.txt`, inside the
+  container.
