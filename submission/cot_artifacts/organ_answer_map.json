@@ -1,0 +1,12 @@
+{
+  "Breast": "breast",
+  "Nipple": "breast",
+  "Uterine cervix": "cervix",
+  "Colon": "colon",
+  "Rectum": "colon",
+  "Anus": "colon",
+  "Lung": "lung",
+  "Prostate": "prostate",
+  "Stomach": "stomach",
+  "Urinary bladder": "bladder"
+}

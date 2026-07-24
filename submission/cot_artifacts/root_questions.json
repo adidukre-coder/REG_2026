@@ -1,0 +1,32 @@
+{
+ "breast": [
+  "What is the organ?",
+  "What is the procedure?"
+ ],
+ "cervix": [
+  "What is the organ?",
+  "What is the procedure?"
+ ],
+ "colon": [
+  "What is the organ?",
+  "What is the procedure?"
+ ],
+ "lung": [
+  "",
+  "What is the organ?",
+  "What is the procedure?"
+ ],
+ "prostate": [
+  "",
+  "What is the organ?",
+  "What is the procedure?"
+ ],
+ "stomach": [
+  "What is the organ?",
+  "What is the procedure?"
+ ],
+ "bladder": [
+  "What is the organ?",
+  "What is the procedure?"
+ ]
+}

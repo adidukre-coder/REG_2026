@@ -1,0 +1,19 @@
+# Weights, caches, and build artifacts — hosted externally, see submission/model/README.md
+submission/model/*
+!submission/model/README.md
+submission/trident/
+*.tar.gz
+
+# Docker build/test scratch
+submission/test/output/
+submission/test/output_fixtest/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# OS/editor cruft
+.DS_Store
+*.swp

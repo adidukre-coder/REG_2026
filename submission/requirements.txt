@@ -1,0 +1,28 @@
+# Interface 0 (pure PIL+numpy) + Interface 1 (TRIDENT -> H-Optimus -> attribute model).
+# torch/torchvision come from the base image (pinned to 2.5.1+cu121 in the Dockerfile to match
+# the validated env so timm 0.9.16 + H-Optimus load correctly).
+Pillow
+numpy
+tifffile
+imagecodecs
+
+# TRIDENT + foundation-model deps (versions matching the validated reg2026 env)
+timm==0.9.16
+transformers>=4.40,<5
+einops
+einops_exts
+safetensors
+huggingface_hub
+segmentation-models-pytorch
+scikit-image>=0.20
+scipy
+h5py
+pandas
+tqdm
+matplotlib
+opencv-python-headless
+openslide-python
+pyvips
+geopandas
+shapely
+requests
